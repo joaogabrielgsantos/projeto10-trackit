@@ -1,6 +1,17 @@
+import Header from './Header';
+import Container from './Container';
+
+
 function PaginaHoje(){
     return(
-        <h1>Página hoje</h1>
+        <>
+            <Header />
+            <Container>
+                <div>Página de hoje</div>
+            </Container>
+
+
+        </>
     )
 }
 

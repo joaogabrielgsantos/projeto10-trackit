@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 function Container(props){
-    console.log(props)
     return (
         <Conteudo>
             {props.children}
@@ -14,6 +13,10 @@ const Conteudo = styled.div`
     height: 100vh;
     padding-top: 70px;
 	background: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
 `;
 
 

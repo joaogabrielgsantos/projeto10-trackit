@@ -1,6 +1,17 @@
+
+import Header from './Header';
+import Container from './Container';
+
 function PaginaHistorico(){
     return(
-        <h1>Página de historico</h1>
+        <>
+        <Header />
+        <Container>
+            <div>Página do histórico</div>
+        </Container>
+
+
+    </>
     )
 }
 
