@@ -23,7 +23,14 @@ input {
     border-radius: 5px;
     padding-left: 11px;
     margin-bottom: 6px;
+    &::placeholder {
+        font-size: 19.976px;
+        line-height: 25px;
+        color: #DBDBDB;
+   }
 }
+
+
 button {
     width: 303px;
     height: 45px;
