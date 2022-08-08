@@ -6,7 +6,7 @@ import { LinkWrap } from "./PaginaCadastro";
 import { useState, useContext } from "react";
 import { ThreeDots } from 'react-loader-spinner';
 import { postLogin } from "../services/trackit";
-import MyContext from "../context/MyContext";
+import { MyContext } from "../context/MyContext";
 
 
 function PaginaLogin() {
@@ -14,7 +14,7 @@ function PaginaLogin() {
     const [password, setPassword] = useState('')
     const [disable, setDisable] = useState(false)
     const [textButton, setTextButton] = useState("Entrar")
-    const {setUser} = useContext(MyContext)
+    const { setImage, setToken } = useContext(MyContext)
 
     const navigate = useNavigate();
 
@@ -27,11 +27,15 @@ function PaginaLogin() {
             email, password
         }
 
+
         postLogin(body).then(response => {
             const { data } = response
-            setUser(data)
+            setImage(data.image)
+            setToken(data.token)
+            const tokenSerializado = JSON.stringify({ token: data.token })
+            localStorage.setItem('trackit', tokenSerializado)
             navigate("/hoje");
-            console.log(response);
+
         })
         postLogin(body).catch(response => {
             const { data } = response
@@ -40,6 +44,8 @@ function PaginaLogin() {
             navigate("/cadastro");
         })
     }
+
+
 
 
 

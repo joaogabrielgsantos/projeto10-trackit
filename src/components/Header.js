@@ -1,8 +1,17 @@
 import styled from 'styled-components';
 import logotipo from "../assets/images/logotipo.svg"
 import perfil from "../assets/images/perfil.png"
+/* import { useContext } from 'react';
+import { MyContext } from "../context/MyContext";
+ */
+
+
+
 
 function Header() {
+
+
+
     return (
         <>
             <Topo>
@@ -13,6 +22,8 @@ function Header() {
 
     )
 }
+
+
 
 
 const Topo = styled.div`
@@ -31,6 +42,9 @@ const Topo = styled.div`
         height: 49px;
     }
     img:last-child {
+        width: 51px;
+        height: 51px;
+        object-fit: cover;
         border-radius: 98.5px;
     }
 `;
