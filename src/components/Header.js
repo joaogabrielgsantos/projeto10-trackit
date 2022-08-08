@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import logotipo from "../assets/images/logotipo.svg"
-import perfil from "../assets/images/perfil.png"
+/* import perfil from "../assets/images/perfil.png" */
 /* import { useContext } from 'react';
 import { MyContext } from "../context/MyContext";
  */
@@ -8,7 +8,7 @@ import { MyContext } from "../context/MyContext";
 
 
 
-function Header() {
+function Header({image}) {
 
 
 
@@ -16,7 +16,7 @@ function Header() {
         <>
             <Topo>
                 <img src={logotipo} alt="Logotipo TrackIt" />
-                <img src={perfil} alt="perfil" />
+                <img src={image} alt="perfil" />
             </Topo>
         </>
 

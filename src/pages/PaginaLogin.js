@@ -3,10 +3,10 @@ import Container from "../components/Container";
 import logo from "../assets/images/logo.png"
 import Inputs from "../components/Inputs";
 import { LinkWrap } from "./PaginaCadastro";
-import { useState, useContext } from "react";
+import { useState, useContext} from "react";
 import { ThreeDots } from 'react-loader-spinner';
 import { postLogin } from "../services/trackit";
-import { MyContext } from "../context/MyContext";
+import MyContext from "../context/MyContext";
 
 
 function PaginaLogin() {
@@ -17,6 +17,8 @@ function PaginaLogin() {
     const { setImage, setToken } = useContext(MyContext)
 
     const navigate = useNavigate();
+
+
 
     function Logar(e) {
         e.preventDefault();

@@ -4,17 +4,19 @@ import PaginaCadastro from "./pages/PaginaCadastro";
 import PaginaHabitos from "./pages/PaginaHabitos";
 import PaginaHoje from "./pages/PaginaHoje";
 import PaginaLogin from "./pages/PaginaLogin";
-import { MyContext } from "./context/MyContext";
+import MyContext from "./context/MyContext";
 import { useState } from "react";
-import PaginaPrivada from "./pages/PaginaPrivada";
+import ProtectedRoutes from "./pages/ProtectedRoutes";
 
 
 
 
 
-function App() {
+function App() { 
+   
     const [image, setImage] = useState("");
-    const [token, setToken] = useState("")
+    const [token, setToken] = useState("");
+    console.log(image);
 
     return (
         <>
@@ -25,8 +27,10 @@ function App() {
                     <Routes>
                         <Route path="/" element={<PaginaLogin />} />
                         <Route path="/cadastro" element={<PaginaCadastro />} />
-                        <Route path="/habitos" element={<PaginaPrivada><PaginaHabitos image={image} token={token}/></PaginaPrivada>} />
-                        <Route path="/hoje" element={<PaginaPrivada><PaginaHoje /></PaginaPrivada>} />
+                        <Route element={<ProtectedRoutes />}>
+                            <Route path="/habitos" element={<PaginaHabitos />} />
+                            <Route path="/hoje" element={<PaginaHoje />} />
+                        </Route>
                     </Routes>
                 </MyContext.Provider>
 

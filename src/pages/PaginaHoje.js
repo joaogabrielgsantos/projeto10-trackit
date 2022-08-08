@@ -1,6 +1,23 @@
+import { useOutletContext, Link } from "react-router-dom";
+import Container from "../components/Container";
+import Header from "../components/Header";
+
+
 function PaginaHoje(){
+    const { image } = useOutletContext()
     return (
-        <h1>Página hoje na área</h1>
+        <>
+         <Header image={image} />
+         <Container>
+         <Link to="/habitos">
+         <button>Vá para página Hábitos</button>
+         </Link>
+         </Container>
+         
+        
+        </>
+       
+        
     )
 }
 
